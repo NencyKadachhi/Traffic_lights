@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TrafficLightsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/store-data',[TrafficLightsController::class,'store'])->name('storeData');
+Route::get('/get-data',[TrafficLightsController::class,'get'])->name('getData');
